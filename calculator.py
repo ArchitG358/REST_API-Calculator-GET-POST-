@@ -16,7 +16,7 @@ def calc():
             return jsonify({'Output': value1 - value2}), 200
         elif operation == '*':
             return jsonify({'Output': value1 * value2}), 200
-        elif operation == ' ':
+        elif operation == ' ':  # + is a special character in URL thus value == '+' cannot be directly passed via GET request.
             return jsonify({'Output': value1 + value2}), 200
         else:
             return "Incorrect Input", 200
